@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# TypeScript output
+dist/
+build/
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+
+# IDE-specific files
+.idea/
+*.iml
+
+# Mac system files
+.DS_Store
+
+# Yarn files
+yarn-error.log
+yarn-debug.log
+
+# NPM files
+npm-debug.log*
+
+# Coverage directory used by tools like istanbul
+coverage/
