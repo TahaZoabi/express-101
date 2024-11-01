@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import TodoModel from "../models/todo";
+import createHttpError from "http-errors";
 export const getTodos: RequestHandler = async (req, res, next) => {
   try {
     const todos = await TodoModel.find().exec();
@@ -24,7 +25,7 @@ export const createTodo: RequestHandler<
   const description = req.body.description;
   try {
     if (!title) {
-      console.log("Note must have a title");
+      throw createHttpError(400, "todo must have a title");
     }
     const newTodo = await TodoModel.create({
       title,
